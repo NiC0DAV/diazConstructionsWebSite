@@ -17,7 +17,7 @@ Route::get('/laravel', function () {
     return view('welcome');
 });
 
-Route::resource('/', 'App\Http\Controllers\MainController');
+Route::resource('/', 'App\Http\Controllers\IndexController');
 // Route::resource('articulos', 'App\Http\Controllers\ArticuloController');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
