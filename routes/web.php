@@ -17,8 +17,12 @@ Route::get('/laravel', function () {
     return view('welcome');
 });
 
-Route::resource('/', 'App\Http\Controllers\IndexController');
-// Route::resource('articulos', 'App\Http\Controllers\ArticuloController');
+
+Route::get('/', 'App\Http\Controllers\IndexController@index');
+
+Route::resource('/newReview', 'App\Http\Controllers\ReviewsController');
+
+Route::resource('/admDashboard', 'App\Http\Controllers\UpdatesController');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

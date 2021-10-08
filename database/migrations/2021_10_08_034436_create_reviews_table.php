@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateReviewsTable extends Migration
+class Reviews extends Migration
 {
     /**
      * Run the migrations.
@@ -15,6 +15,11 @@ class CreateReviewsTable extends Migration
     {
         Schema::create('reviews', function (Blueprint $table) {
             $table->id();
+            $table->string('userName',50);
+            $table->string('userEmail',150);
+            $table->string('reviewStatus',150)->default(0);
+            $table->string('userLocation',80);
+            $table->longText('userDescription',);
             $table->timestamps();
         });
     }

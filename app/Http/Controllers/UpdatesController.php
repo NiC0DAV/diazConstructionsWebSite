@@ -10,6 +10,13 @@ use App\Models\User;
 
 class UpdatesController extends Controller
 {
+
+    public function index(){
+
+        return view('adm-panel.admPanel');
+
+    }
+
     public function updateWebContent(){
 
         if ( $loggedUser = '1'){
