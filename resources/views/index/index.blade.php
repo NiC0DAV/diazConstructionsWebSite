@@ -311,7 +311,7 @@
                         <div class="reviewCard">
                             <div class="cardContent">
                                 <h2>{{ $review->userLocation }}</h2>
-                                <h3>{{ $review->userName }}a</h3>
+                                <h3>{{ $review->userName }}</h3>
                                 <p>
                                     {{ $review->userDescription }}
                                 </p>
@@ -321,6 +321,9 @@
                         $count++;
                         @endphp
                     @endforeach
+                    @if ($count == 0)
+                        <h3>Ouch! sorry, there aren't reviews available to show</h3>
+                    @endif
                     </div>
                 </div>
                 

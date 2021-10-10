@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Redirect;
 
 use App\Models\review;
 use App\Models\User;
@@ -10,7 +11,7 @@ use App\Models\User;
 class ReviewsController extends Controller
 {
     
-    public function reviewsAction(){
+    public function index(){
 
         return view('reviews.review');
 
@@ -19,16 +20,16 @@ class ReviewsController extends Controller
     public function store(Request $request){
 
         
-        $validate = \Validator::make($request->all(), [
-            'userName' => ['required','alpha'],
-            'userLocation' => ['required', 'alpha'],
-            'userEmail' => ['required', 'email', 'unique:reviews']
+        $validateData = \Validator::make($request->all(), [
+            'userName' => ['required'],
+            'userEmail' => ['required','email', 'unique:reviews'],
+            'userLocation' => ['required'],
+            'userDescription' => ['required']
         ]);
 
-        if($validate->fails()){
+        if($validateData->fails()) {
 
-            $message = "The review cannot be created because theres currently a review with the same email";
-            dd($message);
+            return Redirect::back()->withErrors(['msg' => "Sorry, you have to fill all the fields below to create the review or the email you've entered was already submitted on a review"]);
 
         }else{
             $reviewData = new review();

@@ -17,9 +17,9 @@ class CreateReviewsTable extends Migration
             $table->id();
             $table->string('userName',50);
             $table->string('userEmail',150);
-            $table->integer('reviewStatus')->default(0);
             $table->string('userLocation',80);
-            $table->longText('userDescription',);
+            $table->string('userDescription',255);
+            $table->integer('reviewStatus')->default(0);
             $table->timestamps();
         });
     }

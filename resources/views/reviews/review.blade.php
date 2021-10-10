@@ -29,6 +29,9 @@
 <body>
     {{-- <div class="abUsContent"> --}}
         <h1>REVIEWS</h1>
+        @if($errors->any())
+        <h6>{{$errors->first()}}</h6>
+    @endif
         <form action="/newReview" method="post">
             @csrf
     
@@ -50,8 +53,7 @@
             </div>
     
             <button class="btn btn-success">Submit review</button>
-        
-            <h1></h1>
+    
         </form>
     {{-- </div> --}}
 </body>
