@@ -302,43 +302,25 @@
             <h1 class="reviewsTitle" id="reviewsSection">Reviews</h1>
             <div class="reviewsBackg">
                 <div class="reviewsBody">
-                    
                     <div class="reviewsContainer">
+                    @php
+                        $count = 0;
+                    @endphp
+                    @foreach($reviews as $review)
+                    @break($count == 8)
                         <div class="reviewCard">
                             <div class="cardContent">
-                                <h2>Fort Lee - New Jersey</h2>
-                                <h3>Glenda Lima</h3>
+                                <h2>{{ $review->userLocation }}</h2>
+                                <h3>{{ $review->userName }}a</h3>
                                 <p>
-                                    Diaz Constructions is one of the best general contractors we've worked with. 
-                                    The entire team tactfully delivered a project of exceptional quality while staying on schedule and under budget. 
-                                    We hope to work with Greiner again in the near future!
+                                    {{ $review->userDescription }}
                                 </p>
                             </div>
                         </div>
-
-                        <div class="reviewCard">
-                            <div class="cardContent">
-                                <h2>Fort Lee - New Jersey</h2>
-                                <h3>Glenda Lima</h3>
-                                <p>
-                                    Diaz Constructions is one of the best general contractors we've worked with. 
-                                    The entire team tactfully delivered a project of exceptional quality while staying on schedule and under budget. 
-                                    We hope to work with Greiner again in the near future!
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="reviewCard">
-                            <div class="cardContent">
-                                <h2>Fort Lee - New Jersey</h2>
-                                <h3>Glenda Lima</h3>
-                                <p>
-                                    Diaz Constructions is one of the best general contractors we've worked with. 
-                                    The entire team tactfully delivered a project of exceptional quality while staying on schedule and under budget. 
-                                    We hope to work with Greiner again in the near future!
-                                </p>
-                            </div>
-                        </div>
+                        @php
+                        $count++;
+                        @endphp
+                    @endforeach
                     </div>
                 </div>
                 

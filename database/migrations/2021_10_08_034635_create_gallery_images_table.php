@@ -15,6 +15,11 @@ class CreateGalleryImagesTable extends Migration
     {
         Schema::create('gallery_images', function (Blueprint $table) {
             $table->id();
+            $table->string('imageTitle',50);
+            $table->string('imagePlace',150);
+            $table->integer('sliderStatus')->default(0);
+            $table->string('pathImage',255);
+            $table->longText('imageDescription',);
             $table->timestamps();
         });
     }

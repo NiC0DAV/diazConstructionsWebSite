@@ -13,11 +13,11 @@ use App\Models\galleryImage;
 class IndexController extends Controller
 {
     public function index(){
-        $webContentData = WebContent::all();
-        $webContentData = User::all();
-        $webContentData = review::all();
-        $webContentData = galleryImage::all();
+        $content = WebContent::all();
+        $users = User::all();
+        $reviews = review::all();
+        $images = galleryImage::all();
         
-        return view('index.index');
+        return view('index.index')->with('reviews', $reviews)->with('content', $content)->with('images', $images);
     }
 }

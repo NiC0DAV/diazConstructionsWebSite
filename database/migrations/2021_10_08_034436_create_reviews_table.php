@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class Reviews extends Migration
+class CreateReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -17,7 +17,7 @@ class Reviews extends Migration
             $table->id();
             $table->string('userName',50);
             $table->string('userEmail',150);
-            $table->string('reviewStatus',150)->default(0);
+            $table->integer('reviewStatus')->default(0);
             $table->string('userLocation',80);
             $table->longText('userDescription',);
             $table->timestamps();
