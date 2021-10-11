@@ -142,10 +142,7 @@
                     <div class="abUsContent" >
                         <h1>ABOUT US</h1>
                         <hr>
-                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                            Harum quae aliquid rerum laborum nisi quidem fugit aspernatur rem voluptatum nesciunt reiciendis adipisci ipsum, 
-                            earum voluptatibus magnam perspiciatis provident officia pariatur! Quisquam odio quos deserunt quas architecto tenetur 
-                            debitis accusantium omnis?</p>
+                        <p>{{ $content->aboutUsText }}</p>
                     </div>
                 </div>
                 <div class="abUsCardContainer">
@@ -156,9 +153,7 @@
                             </div>
                             <div class="cardContent">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi vero illo modi a recusandae debitis. 
-                                    Est sit a porro et, perspiciatis blanditiis sed nobis possimus mollitia magni fugit nihil illo ullam eveniet quam. 
-                                    Culpa ab illo id fuga.
+                                    {{ $content->mission }}
                                 </p>
                             </div>
                         </div>
@@ -168,9 +163,7 @@
                             </div>
                             <div class="cardContent">
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi vero illo modi a recusandae debitis. 
-                                    Est sit a porro et, perspiciatis blanditiis sed nobis possimus mollitia magni fugit nihil illo ullam eveniet quam. 
-                                    Culpa ab illo id fuga
+                                    {{ $content->vission }}
                                 </p>
                             </div>
                         </div>
@@ -202,10 +195,7 @@
                                 <h1>Professional Services</h1>
                                 <p>Quality Work Great Rates</p>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                                    Harum quae aliquid rerum laborum nisi quidem fugit aspernatur rem voluptatum nesciunt reiciendis adipisci ipsum, 
-                                    earum voluptatibus magnam perspiciatis provident officia pariatur! Quisquam odio quos deserunt quas architecto tenetur 
-                                    debitis accusantium omnis?
+                                    {{ $content->pfSv1 }}
                                 </p>
                                     <a href="#" class="btn">Click Me</a>
                             </div>
@@ -220,10 +210,7 @@
                                 <h1>Professional Services</h1>
                                 <p>Quality Work Great Rates</p>
                                 <p>
-                                    Lorem ipsum dolor sit amet consectetur, adipisicing elit. 
-                                    Harum quae aliquid rerum laborum nisi quidem fugit aspernatur rem voluptatum nesciunt reiciendis adipisci ipsum, 
-                                    earum voluptatibus magnam perspiciatis provident officia pariatur! Quisquam odio quos deserunt quas architecto tenetur 
-                                    debitis accusantium omnis?
+                                    {{ $content->pfSv2 }}
                                 </p>
                                     <a href="#" class="btn">Click Me</a>
                             </div>
@@ -308,6 +295,7 @@
                     @endphp
                     @foreach($reviews as $review)
                     @break($count == 8)
+                    @if($review->reviewStatus == 1)
                         <div class="reviewCard">
                             <div class="cardContent">
                                 <h2>{{ $review->userLocation }}</h2>
@@ -317,6 +305,7 @@
                                 </p>
                             </div>
                         </div>
+                    @endif
                         @php
                         $count++;
                         @endphp
@@ -366,16 +355,15 @@
                             <ul class="info">
                                 <li>
                                     <span><i class="fas fa-map-marker-alt"></i></span>
-                                    <span>Address: 2 Flower LN, New Hyde Park, 
-                                        <br/>New York 11040, USA</span>
+                                    <span>Address: {{ $content->address }}</span>
                                 </li>
                                 <li>
                                     <span><i class="fas fa-phone-alt"></i></span>
-                                    <span>Tel: 718 6143299</span>
+                                    <span>Tel: {{ $content->telText }}</span>
                                 </li>
                                 <li>
                                     <span><i class="fas fa-envelope"></i></span>
-                                    <span>Email: josevicentediazsusa@gmail.com</span>
+                                    <span>Email: {{ $content->emailText }}</span>
                                 </li>
                             </ul>
                         </div>

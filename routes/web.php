@@ -22,7 +22,11 @@ Route::get('/', 'App\Http\Controllers\IndexController@index');
 
 Route::resource('/newReview', 'App\Http\Controllers\ReviewsController');
 
-Route::resource('/admDashboard', 'App\Http\Controllers\UpdatesController');
+Route::get('/admDashboard/{id}', 'App\Http\Controllers\AdmController@dashBoardView');
+
+Route::post('/admDashboard/newWebContent', 'App\Http\Controllers\AdmController@webContentInsert');
+
+Route::post('/admDashboard/updateWebContent/{id}', 'App\Http\Controllers\AdmController@updateWebContent');
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');

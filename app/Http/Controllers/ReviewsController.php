@@ -14,12 +14,13 @@ class ReviewsController extends Controller
     public function index(){
 
         return view('reviews.review');
+        
 
     }
 
     public function store(Request $request){
 
-        
+
         $validateData = \Validator::make($request->all(), [
             'userName' => ['required'],
             'userEmail' => ['required','email', 'unique:reviews'],
