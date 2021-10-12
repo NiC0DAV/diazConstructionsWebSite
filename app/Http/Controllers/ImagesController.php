@@ -3,80 +3,38 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\galleryImage;
 
 class ImagesController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
+
+
+    public function imagesUpload(Request $request)
     {
-        return view('adm-panel.admPanel');
+        $images = new galleryImage();
+
+        $images->imageTitle = $request->input('imageTitle');
+        $images->imagePlace = $request->input('imagePlace');
+        $images->imageDescription = $request->input('imageDescription');
+
+        if($request->hasfile('pathImage')){
+            $file = $request->file('pathImage');
+            $extension = $file->getClientOriginalExtension();
+            $fileName = time().'.'.$extension;
+            $file->move('uploads', $fileName);
+            $images->pathImage = $fileName;
+        }else{
+            return $request;
+            $images->pathImage = '';
+        }
+
+        // dd($images->pathImage);
+        // die();
+        $images->save();
+
+        return redirect('/admDashboard/1');
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
-    }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
-    {
-        //
-    }
-
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
     public function destroy($id)
     {
         //

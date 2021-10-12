@@ -9,12 +9,13 @@ use App\Models\galleryImage;
 use App\Models\WebContent;
 use App\Models\User;
 
-class AdmController extends Controller
+class WebContentController extends Controller
 {
 
     public function dashBoardView($id){
 
         $webData = WebContent::find($id);
+        
         return view('adm-panel.admPanel')->with('webContent', $webData);
 
     }
@@ -53,8 +54,6 @@ class AdmController extends Controller
         ]);
         
 
-        // dd($request->all());
-        // die();
         $webContentData = WebContent::find($id);
 
         $webContentData->aboutUsText = $request->get('aboutUsText');
@@ -68,34 +67,10 @@ class AdmController extends Controller
 
         $webContentData->save();
 
-        
-
-        // $webContentUpdate = WebContent::where('idText', 1)->update($webContentData);
 
         return Redirect::back(); 
 
     }
 
-    // public function updateImagesGallery(){
-
-    //     if ( $loggedUser = '1'){
-    //         // Actualizar datos
-    //             $validate = \Validator::make($webContentData, [
-    //                 'imageTitle' => ['required','alpha'],
-    //                 'imageDescription' => ['required', 'alpha'],
-    //                 'imagePlace' => ['alpha'],
-    //                 'pathImage' => ['alpha'],
-    //                 'sliderStatus' => ['required']
-    //             ]);
-
-    //             //Actualizar datos en BD
-    //             $webContentUpdate = WebContent::where('idText', 1)->update($webContentData);
-
-    //             $status = 'Success';
-
-    //     }else{
-    //         $status = 'Error';
-    //     }
-    // }
 
 }
