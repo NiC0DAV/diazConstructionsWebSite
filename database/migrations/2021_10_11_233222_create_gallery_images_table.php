@@ -19,7 +19,7 @@ class CreateGalleryImagesTable extends Migration
             $table->string('imagePlace',150);
             $table->integer('sliderStatus')->default(0);
             $table->string('pathImage',255);
-            $table->longText('imageDescription',);
+            $table->longText('imageDescription');
             $table->timestamps();
         });
     }

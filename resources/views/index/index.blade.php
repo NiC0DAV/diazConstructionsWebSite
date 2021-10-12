@@ -14,11 +14,13 @@
         <!-- Styles -->
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> --}}
         <link rel="stylesheet" href="{{ url('./css/style.css') }}">
+        <link rel="stylesheet" type="text/css" href="{{ url('./css/lightbox.css') }}">
 
         <!-- JS -->
         {{-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> --}}
-        <script type="text/javascript" src="{{ url('./js/main.js') }}"></script>
         <script src="https://kit.fontawesome.com/a4edce8cc0.js" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <script type="text/javascript" src="{{ url('./js/main.js') }}"></script>
 
     </head>
     <body>
@@ -49,92 +51,25 @@
             <section id="reviews">Reviews</section>
             <section id="conUs">Contact Us</section>
         </div>
-
-        {{-- <div id="popup">
-            <h2>Hola</h2>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Illo doloribus neque nam temporibus asperiores distinctio aspernatur,
-                ad culpa ipsa quidem obcaecati sunt in dolorum tempore doloremque corporis cum, aut error magni fuga quae quod? Totam consectetur 
-                est expedita laborum eos recusandae harum reiciendis, dolor eveniet doloremque doloribus quia voluptate repellat quo quisquam deserunt, 
-                quos sequi quod id at quae explicabo!</p>
-                <a onclick=modalToggle();>Close</a>
-        </div> --}}
         
             <div class="slider" id="slider">
-                <input type="radio" name="slider" id="checkbox1" checked="true" value="">
-                <div class="imgBx">
-                    <img class="sliderImage" src="{{ url('storage/images/img1.jpg')}}" alt="">
-                    <div class="content">
-                        <h2>Slide One</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi vero illo modi a recusandae debitis. 
-                            Est sit a porro et, perspiciatis blanditiis sed nobis possimus mollitia magni fugit nihil illo ullam eveniet quam. 
-                            Culpa ab illo id fuga laborum consequuntur impedit nesciunt eos fugiat iure ipsa amet, doloribus nihil!
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium magnam, enim harum quidem quasi accusamus tempore? 
-                            Qui natus corrupti cumque.
-                        </p>
-                        <a href="#">Read More</a>
+
+                @foreach($images as $image)
+                    @if($image->sliderStatus == 1)
+                    <input type="radio" name="slider" id="radio" checked="true" value="">
+                    <div class="imgBx">
+                        <img class="sliderImage" src="{{ url('uploads/'.$image->pathImage) }}" alt="">
+                        <div class="content">
+                            <h2>{{ $image->imageTitle }}</h2>
+                            <p>
+                                {{ $image->imageDescription }}
+                            </p>
+                            <a href="#">Read More</a>
+                        </div>
                     </div>
-                </div>
-                <input type="radio" name="slider" id="checkbox2">
-                <div class="imgBx">
-                    <img class="sliderImage" src="{{ url('storage/images/img2.jpg')}}" alt="">
-                    <div class="content">
-                        <h2>Slide Two</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi vero illo modi a recusandae debitis. 
-                            Est sit a porro et, perspiciatis blanditiis sed nobis possimus mollitia magni fugit nihil illo ullam eveniet quam. 
-                            Culpa ab illo id fuga laborum consequuntur impedit nesciunt eos fugiat iure ipsa amet, doloribus nihil!
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium magnam, enim harum quidem quasi accusamus tempore? 
-                            Qui natus corrupti cumque.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <input type="radio" name="slider" id="checkbox3">
-                <div class="imgBx">
-                    <img class="sliderImage" src="{{ url('storage/images/img3.jpg')}}" alt="">
-                    <div class="content">
-                        <h2>Slide Three</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi vero illo modi a recusandae debitis. 
-                            Est sit a porro et, perspiciatis blanditiis sed nobis possimus mollitia magni fugit nihil illo ullam eveniet quam. 
-                            Culpa ab illo id fuga laborum consequuntur impedit nesciunt eos fugiat iure ipsa amet, doloribus nihil!
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium magnam, enim harum quidem quasi accusamus tempore? 
-                            Qui natus corrupti cumque.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <input type="radio" name="slider" id="checkbox4">
-                <div class="imgBx">
-                    <img class="sliderImage" src="{{ url('storage/images/img4.jpg')}}" alt="">
-                    <div class="content">
-                        <h2>Slide Four</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi vero illo modi a recusandae debitis. 
-                            Est sit a porro et, perspiciatis blanditiis sed nobis possimus mollitia magni fugit nihil illo ullam eveniet quam. 
-                            Culpa ab illo id fuga laborum consequuntur impedit nesciunt eos fugiat iure ipsa amet, doloribus nihil!
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium magnam, enim harum quidem quasi accusamus tempore? 
-                            Qui natus corrupti cumque.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
-                <input type="radio" name="slider" id="checkbox5">
-                <div class="imgBx">
-                    <img class="sliderImage" src="{{ url('storage/images/img5.jpg')}}" alt="">
-                    <div class="content">
-                        <h2>Slide Five</h2>
-                        <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi sequi vero illo modi a recusandae debitis. 
-                            Est sit a porro et, perspiciatis blanditiis sed nobis possimus mollitia magni fugit nihil illo ullam eveniet quam. 
-                            Culpa ab illo id fuga laborum consequuntur impedit nesciunt eos fugiat iure ipsa amet, doloribus nihil!
-                            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium magnam, enim harum quidem quasi accusamus tempore? 
-                            Qui natus corrupti cumque.
-                        </p>
-                        <a href="#">Read More</a>
-                    </div>
-                </div>
+                    @endif
+                @endforeach
+
             </div>
             
             <div class="mainContainer" id="abUsSec">
@@ -208,7 +143,7 @@
                         <div class="left1">
                             <div class="content" style="color:#fff">
                                 <h1>Professional Services</h1>
-                                <p>Quality Work Great Rates</p>
+                                <p>Customized To Your Preferences</p>
                                 <p>
                                     {{ $content->pfSv2 }}
                                 </p>
@@ -221,69 +156,15 @@
 
             <div class="gallery" id="sectionGallery">
                 <h1 class="galleryTitle">Images Gallery</h1>
-                {{-- <span class="linea"></span> --}}
                 <section class="sectionGallery" id="sectionGallery">
-                    <a href="#image1" class="galleryHiperV">
-                        <img src="{{ url('storage/images/uno.jpg')}}" alt="">
-                    </a>
-                    <a href="#image2">
-                        <img src="{{ url('storage/images/dos.jpg')}}" alt="">
-                    </a>
-                    <a href="#image3" >
-                        <img src="{{ url('storage/images/tres.jpg')}}" alt="">
-                    </a>
-                    <a href="#image4">
-                        <img src="{{ url('storage/images/cuatro.jpg')}}" alt="">
-                    </a>
-                    <a href="#image5">
-                        <img src="{{ url('storage/images/cinco.jpg')}}" alt="">
-                    </a>
-                    <a href="#image6">
-                        <img src="{{ url('storage/images/seis.jpg')}}" alt="">
-                    </a>
+                    @foreach ($images as $image)
+
+                        <a class="example-image-link" href="{{ url('uploads/'.$image->pathImage) }}" data-lightbox="example-1">
+                            <img class="example-image" src="{{ url('uploads/'.$image->pathImage) }}" alt="image-1" />
+                        </a>      
+
+                    @endforeach
                 </section>
-
-                <article class="light-box" id="image1">
-                    <a href="#image6" class="next"><i class="fas fa-arrow-left"></i></a>
-                    <img src="{{ url('storage/images/uno.jpg')}}" alt="">
-                    <a href="#image2" class="next"><i class="fas fa-arrow-right"></i></a>
-                    <a href="#sectionGallery" class="close">X</a>
-                </article>
-
-                <article class="light-box" id="image2">
-                    <a href="#image1" class="next"><i class="fas fa-arrow-left"></i></a>
-                    <img src="{{ url('storage/images/dos.jpg')}}" alt="">
-                    <a href="#image3" class="next"><i class="fas fa-arrow-right"></i></a>
-                    <a href="#sectionGallery" class="close">X</a>
-                </article>
-                
-                <article class="light-box" id="image3">
-                    <a href="#image2" class="next"><i class="fas fa-arrow-left"></i></a>
-                    <img src="{{ url('storage/images/tres.jpg')}}" alt="">
-                    <a href="#image4" class="next"><i class="fas fa-arrow-right"></i></a>
-                    <a href="#sectionGallery" class="close">X</a>
-                </article>
-
-                <article class="light-box" id="image4">
-                    <a href="#image3" class="next"><i class="fas fa-arrow-left"></i></a>
-                    <img src="{{ url('storage/images/cuatro.jpg')}}" alt="">
-                    <a href="#image5" class="next"><i class="fas fa-arrow-right"></i></a>
-                    <a href="#sectionGallery" class="close">X</a>
-                </article>
-
-                <article class="light-box" id="image5">
-                    <a href="#image4" class="next"><i class="fas fa-arrow-left"></i></a>
-                    <img src="{{ url('storage/images/cinco.jpg')}}" alt="">
-                    <a href="#image6" class="next"><i class="fas fa-arrow-right"></i></a>
-                    <a href="#sectionGallery" class="close">X</a>
-                </article>
-
-                <article class="light-box" id="image6">
-                    <a href="#image5" class="next"><i class="fas fa-arrow-left"></i></a>
-                    <img src="{{ url('storage/images/seis.jpg')}}" alt="">
-                    <a href="#image1" class="next"><i class="fas fa-arrow-right"></i></a>
-                    <a href="#sectionGallery" class="close">X</a>
-                </article>
             </div>
             
             <h1 class="reviewsTitle" id="reviewsSection">Reviews</h1>
@@ -373,6 +254,8 @@
                     <p>Copyright &copy; 2021 Diaz Constructions. All rights reserved.</p>
                 </div>
             </div>
+        
+        <script type="text/javascript" src="{{ url('./js/lightbox.js') }}"></script>
         <script type="text/javascript" src="{{ url('./js/vanilla-tilt.js') }}"></script>
         <script type="text/javascript">
             VanillaTilt.init(document.querySelectorAll(".reviewCard"), {
