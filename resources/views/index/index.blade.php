@@ -158,11 +158,11 @@
                 <h1 class="galleryTitle">Images Gallery</h1>
                 <section class="sectionGallery" id="sectionGallery">
                     @foreach ($images as $image)
-
+                        
                         <a class="example-image-link" href="{{ url('uploads/'.$image->pathImage) }}" data-lightbox="example-1">
                             <img class="example-image" src="{{ url('uploads/'.$image->pathImage) }}" alt="image-1" />
-                        </a>      
-
+                        </a> 
+                        
                     @endforeach
                 </section>
             </div>

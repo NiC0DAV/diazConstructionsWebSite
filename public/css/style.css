@@ -52,6 +52,9 @@ header{
     letter-spacing: 2px;
     transition: 0.5s;
 }
+.img-table{
+    max-width: 100px;
+}
 
 #toggle{
     position: absolute;

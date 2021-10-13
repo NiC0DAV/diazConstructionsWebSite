@@ -32,7 +32,7 @@
         @if($errors->any())
         <h6>{{$errors->first()}}</h6>
     @endif
-        <form action="/newReview" method="post">
+        <form action="/newReview/create" method="post">
             @csrf
     
             <div class="form-group">

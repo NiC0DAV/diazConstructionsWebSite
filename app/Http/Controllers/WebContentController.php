@@ -12,14 +12,26 @@ use App\Models\User;
 class WebContentController extends Controller
 {
 
-    public function dashBoardView($id){
+    public function dashBoardView(){
 
-        $webData = WebContent::find($id);
-        
-        return view('adm-panel.admPanel')->with('webContent', $webData);
+        return view('adm-panel.admPanel');
 
     }
 
+    public function createWebContentView(){
+
+        return view('webContent.createWebCon');
+
+    }
+
+    public function updateWebContentView($id){
+
+        $webContentData = WebContent::find($id);
+        return view('webContent.editWebCon')->with('webContent', $webContentData);
+
+    }
+
+    
     public function webContentInsert(Request $request){
 
         $webContentData = new WebContent();
@@ -35,12 +47,14 @@ class WebContentController extends Controller
 
         $webContentData->save();
 
-        return Redirect::back();  
+        return redirect('/admDashboard');  
 
     }
 
     public function updateWebContent(Request $request, $id){
-        
+
+        $webContentData = WebContent::find($id);
+
         $validate = \Validator::make($request->all(), [
             'aboutUsText' => ['required','alpha'],
             'mission' => ['required', 'alpha'],
@@ -52,9 +66,6 @@ class WebContentController extends Controller
             'emailText' => ['required', 'alpha']
             
         ]);
-        
-
-        $webContentData = WebContent::find($id);
 
         $webContentData->aboutUsText = $request->get('aboutUsText');
         $webContentData->mission = $request->get('mission');
@@ -67,8 +78,7 @@ class WebContentController extends Controller
 
         $webContentData->save();
 
-
-        return Redirect::back(); 
+        return redirect('/admDashboard/updateWebContent/1');
 
     }
 

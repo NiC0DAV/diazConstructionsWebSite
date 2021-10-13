@@ -8,6 +8,25 @@ use App\Models\galleryImage;
 class ImagesController extends Controller
 {
 
+    public function imagesView(){
+        
+        $images = galleryImage::all();
+        return view('imagesView.viewImages')->with('images', $images);
+
+    }
+
+    public function imagesCreateView(){
+        
+        return view('imagesView.createImages');
+
+    }
+
+    public function editImagesCreateView($id){
+        
+        $images = galleryImage::find($id);
+        return view('imagesView.editImages')->with('images', $images);
+
+    }
 
     public function imagesUpload(Request $request)
     {
@@ -23,20 +42,43 @@ class ImagesController extends Controller
             $fileName = time().'.'.$extension;
             $file->move('uploads', $fileName);
             $images->pathImage = $fileName;
+
+            $images->save();
+            
         }else{
-            return $request;
-            $images->pathImage = '';
+            // return $request;
+            dd($images->pathImage);
+            die();
         }
 
-        // dd($images->pathImage);
-        // die();
+        return redirect('/admDashBoard/imagesView');
+
+    }
+
+    public function editImage($id)
+    {
+        $images = galleryImage::find($id);
+
+        return view('imagesView.editImages')->with('images', $images);
+    }
+
+    public function updateImage(Request $request, $id)
+    {
+        $images = galleryImage::find($id);
+
+        $images->imageTitle = $request->get('imageTitle');
+        $images->imagePlace = $request->get('imagePlace');
+        $images->imageDescription = $request->get('imageDescription');
+        $images->sliderStatus = $request->get('sliderStatus');
         $images->save();
 
-        return redirect('/admDashboard/1');
+        return redirect('/admDashBoard/imagesView');
     }
 
     public function destroy($id)
     {
-        //
+        $images = galleryImage::find($id);
+        $images->delete();
+        return redirect('/admDashBoard/imagesView');
     }
 }
