@@ -56,6 +56,16 @@ header{
     max-width: 100px;
 }
 
+.jumbotron{
+    text-decoration: none;
+    color: #000;
+}
+
+.jumbotron:hover{
+    color: #000;
+}
+
+
 #toggle{
     position: absolute;
     top: 0;

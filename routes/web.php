@@ -20,7 +20,7 @@ Route::get('/laravel', function () {
 
 Route::get('/', 'App\Http\Controllers\IndexController@index');
 
-Route::get('/admDashboard', 'App\Http\Controllers\WebContentController@dashBoardView');
+Route::get('/admDashBoard', 'App\Http\Controllers\WebContentController@dashBoardView');
 
 // Reviews
 
@@ -38,13 +38,13 @@ Route::get('/admDashBoard/reviewsCheck/statusChange/{id}/edit', 'App\Http\Contro
 
 // Contenido Web (texto)
 
-Route::get('/admDashboard/newWebContent', 'App\Http\Controllers\WebContentController@createWebContentView');
+Route::get('/admDashBoard/newWebContent', 'App\Http\Controllers\WebContentController@createWebContentView');
 
-Route::post('/admDashboard/newWebContent/create', 'App\Http\Controllers\WebContentController@webContentInsert');
+Route::post('/admDashBoard/newWebContent/create', 'App\Http\Controllers\WebContentController@webContentInsert');
 
-Route::get('/admDashboard/updateWebContent/{id}', 'App\Http\Controllers\WebContentController@updateWebContentView');
+Route::get('/admDashBoard/updateWebContent/{id}', 'App\Http\Controllers\WebContentController@updateWebContentView');
 
-Route::post('/admDashboard/updateWebContent/{id}/edit', 'App\Http\Controllers\WebContentController@updateWebContent');
+Route::post('/admDashBoard/updateWebContent/{id}/edit', 'App\Http\Controllers\WebContentController@updateWebContent');
 
 // Administración de imagenes
 
