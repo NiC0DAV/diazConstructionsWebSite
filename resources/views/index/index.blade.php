@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Diaz Constructions</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,7 +24,7 @@
 
     </head>
     <body>
-        
+
         <header id="header">
             {{-- <div id="headerContainer"> --}}
                 <a href="#" class="logo">Diaz Constructions</a>
@@ -64,7 +64,7 @@
                             <p>
                                 {{ $image->imageDescription }}
                             </p>
-                            <a href="#">Read More</a>
+                            <a href="#sectionGallery">View More Images</a>
                         </div>
                     </div>
                     @endif
@@ -105,7 +105,7 @@
                     </div>
                 </div>
                 
-        
+
                 <img src="{{ url('storage/images/wave1.png')}}" alt="" class="wavePath">
             </div>
             {{-- <div class="userSatisfy">
@@ -132,7 +132,7 @@
                                 <p>
                                     {{ $content->pfSv1 }}
                                 </p>
-                                    <a href="#" class="btn">Click Me</a>
+                                    {{-- <a href="#" class="btn">Click Me</a> --}}
                             </div>
                         </div>
                     </div>
@@ -147,7 +147,7 @@
                                 <p>
                                     {{ $content->pfSv2 }}
                                 </p>
-                                    <a href="#" class="btn">Click Me</a>
+                                    {{-- <a href="#" class="btn">Click Me</a> --}}
                             </div>
                         </div>
                     </div>
@@ -168,6 +168,9 @@
             </div>
             
             <h1 class="reviewsTitle" id="reviewsSection">Reviews</h1>
+            <div class="containerReviewButton">
+                <a href="/newReview" target="_blank" class="btn-review">Leave a Review</a>
+            </div>
             <div class="reviewsBackg">
                 <div class="reviewsBody">
                     <div class="reviewsContainer">
@@ -209,9 +212,7 @@
                                 <h2>About Us</h2>
                             </div>
                             <p>
-                                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Harum quae aliquid rerum laborum nisi quidem fugit aspernatur 
-                                rem voluptatum nesciunt reiciendis adipisci ipsum, earum voluptatibus magnam perspiciatis provident officia pariatur! Quisquam 
-                                odio quos deserunt quas architecto tenetur debitis accusantium omnis?
+                                {{ $content->aboutUsText }}
                             </p>
                             <ul class="sci">
                                 <li><a href=""><i class="fab fa-facebook-f"></i></a></li>

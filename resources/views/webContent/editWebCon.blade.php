@@ -53,7 +53,7 @@
             <input id="emailText" class="form-control" type="text" name="emailText" value="{{$webContent->emailText}}">
         </div>
         <div class="d-grid gap-2 col-md-3 mx-auto mt-3">
-            <button class="btn btn-success"> Submit new data</button>
+            <button class="btn btn-success">Update information</button>
         </div>
         
     </div>

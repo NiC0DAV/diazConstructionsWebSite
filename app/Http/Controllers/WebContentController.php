@@ -78,7 +78,7 @@ class WebContentController extends Controller
 
         $webContentData->save();
 
-        return redirect('/admDashboard/updateWebContent/1');
+        return redirect('/admDashBoard/updateWebContent/1');
 
     }
 

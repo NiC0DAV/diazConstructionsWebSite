@@ -46,6 +46,7 @@ Route::get('/admDashBoard/updateWebContent/{id}', 'App\Http\Controllers\WebConte
 
 Route::post('/admDashBoard/updateWebContent/{id}/edit', 'App\Http\Controllers\WebContentController@updateWebContent');
 
+
 // Administración de imagenes
 
 Route::get('/admDashBoard/imagesView', 'App\Http\Controllers\ImagesController@imagesView');
@@ -58,6 +59,9 @@ Route::post('/admDashBoard/imagesView/upload', 'App\Http\Controllers\ImagesContr
 
 Route::get('/admDashBoard/imagesView/{id}/edit', 'App\Http\Controllers\ImagesController@editImagesCreateView');
 
+// Login
+
+Route::get('/login', 'App\Http\Controllers\IndexController@login');
 
 
 Route::get('/admDashboard/updateImage/{id}', 'App\Http\Controllers\ImagesController@editImage');

@@ -14,7 +14,7 @@
     <!-- Styles -->
     {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> --}}
     <link rel="stylesheet" href="{{ url('./css/style.css') }}">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous">
+    {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-uWxY/CJNBR+1zjPWmfnSnVxwRheevXITnMqoEIeG1LJrdI0GlVs/9cVSyPYXdcSF" crossorigin="anonymous"> --}}
 
 
     <!-- JS -->
@@ -26,35 +26,57 @@
 
     <title>Document</title>
 </head>
-<body>
-    {{-- <div class="abUsContent"> --}}
-        <h1>REVIEWS</h1>
-        @if($errors->any())
-        <h6>{{$errors->first()}}</h6>
-    @endif
-        <form action="/newReview/create" method="post">
-            @csrf
+<body class="reviewBody">
+    <header id="header">
+            <a href="#" class="logo">Diaz Constructions</a>
+            {{-- <img src="{{ url('storage/images/logo.png')}}" alt=""> --}}
+    </header>
+
+    <section class="sec">
+        <div class="content">
+            <div class="textbox">
+                <h3>Leave Us a<br><span>Review!</span></h3>
+                {{-- <p>
+                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestias magnam voluptatum facilis veniam, 
+                    perspiciatis culpa voluptatem nobis saepe officiis libero officia explicabo laboriosam dolores pariatur 
+                    atque animi nam accusamus corporis. Sint dolorum veritatis debitis voluptatibus, eos deserunt recusandae 
+                    itaque nobis, facilis suscipit nulla dolore, quaerat aliquid harum dicta inventore numquam quidem nesciunt 
+                    error ea nam neque quis.
+                </p> --}}
+                @if($errors->any())
+                    <h6>{{$errors->first()}}</h6>
+                @endif
+                <form action="/newReview/create" method="post">
+                    @csrf
+            
+                    <div class="form-group">
+                        <label for="userName">Name</label>
+                        <input id="userName" class="form-control" placeholder="Terrance James" type="text" name="userName">
+                    </div>
+                    <div class="form-group">
+                        <label for="userEmail">E-Mail</label>
+                        <input id="userEmail" class="form-control" type="text" placeholder="example@email.com" name="userEmail">
+                    </div>
+                    <div class="form-group">
+                        <label for="userLocation">Location</label>
+                        <input id="userLocation" class="form-control" type="text" placeholder="Fort Lee - New Jersey" name="userLocation">
+                    </div>
+                    <div class="form-group">
+                        <label for="userDescription">Text</label>
+                        <textarea id="userDescription" class="form-control" type="text" placeholder="Write what you want" name="userDescription" rows="3"></textarea>
+                    </div>
+            
+                    <button class="btn">Submit review</button>
+                </form>
+                {{-- <a href="#">View All Products</a> --}}
+                </div>
+                <div class="imgBox">
+                    <img src="{{ url('storage/images/engineering.png')}}" alt="">
+                </div>
+        </div>
+    </section>
+
     
-            <div class="form-group">
-                <label for="userName">Name</label>
-                <input id="userName" class="form-control" placeholder="Terrance James" type="text" name="userName">
-            </div>
-            <div class="form-group">
-                <label for="userEmail">E-Mail</label>
-                <input id="userEmail" class="form-control" type="text" placeholder="example@email.com" name="userEmail">
-            </div>
-            <div class="form-group">
-                <label for="userLocation">Location</label>
-                <input id="userLocation" class="form-control" type="text" placeholder="Fort Lee - New Jersey" name="userLocation">
-            </div>
-            <div class="form-group">
-                <label for="userDescription">Text</label>
-                <textarea id="userDescription" class="form-control" type="text" placeholder="Write what you want" name="userDescription" rows="3"></textarea>
-            </div>
-    
-            <button class="btn btn-success">Submit review</button>
-    
-        </form>
     {{-- </div> --}}
 </body>
 </html>

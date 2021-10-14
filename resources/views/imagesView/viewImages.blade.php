@@ -1,5 +1,5 @@
 @extends('adm-panel.admPanel')
-@section('createImages')
+@section('viewImages')
 
 <div class="imgModule">
     <h2 class="text-center">Images section</h2>

@@ -4,7 +4,7 @@
     <div class="webContentModule">
         <h2>NEW Web Content</h2>
 
-        <form action="/admDashboard/NewWebContent/create" method="post">
+        <form action="/admDashBoard/NewWebContent/create" method="post">
             @csrf
             <div class="form-group">
                 <div class="form-group">

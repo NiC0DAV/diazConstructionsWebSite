@@ -65,6 +65,24 @@ header{
     color: #000;
 }
 
+.containerReviewButton{
+    display: flex;
+    justify-content: center;
+    margin-top: -33px;
+}
+
+.btn-review{
+    position: relative;
+    display: inline-block;
+    background: #FFF;
+    padding: 10px 30px;
+    color: #111;
+    font-weight: 500;
+    margin-top: 20px;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
 
 #toggle{
     position: absolute;
