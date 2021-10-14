@@ -65,6 +65,9 @@ Route::put('/admDashboard/updateImage/{id}/edit', 'App\Http\Controllers\ImagesCo
 
 // Login
 
-Route::get('/loginWeb', 'App\Http\Controllers\IndexController@login');
+Route::get('/login', 'App\Http\Controllers\MainController@index');
+Route::post('/login/checklogin', 'App\Http\Controllers\MainController@checkLogin');
+Route::get('/login/successlogin', 'App\Http\Controllers\MainController@successLogin');
+Route::get('/login/logout', 'App\Http\Controllers\MainController@logout');
 
 

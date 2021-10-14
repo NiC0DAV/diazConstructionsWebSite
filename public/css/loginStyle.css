@@ -200,4 +200,23 @@ section .color:nth-child(3){
     font-weight: 600;
 }
 
+.alert{
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-top-color: transparent;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-left-color: transparent;
+    border-radius: 4px;
+}
 
+.alert-danger{
+    color: #b94a48;
+    background-color: #b94a48;
+    margin-top: 10px;
+}
+
+strong{
+    color: #111;
+}

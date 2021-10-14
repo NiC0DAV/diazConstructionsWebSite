@@ -25,7 +25,7 @@
     <title>Admin Dashboard</title>
 </head>
 <body>
-    <!-- top navigation bar -->
+  @if (isset(Auth::user()->email))
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
       <div class="container-fluid">
         <a
@@ -49,7 +49,7 @@
                 <i class="bi bi-person-fill"></i>
               </a>
               <ul class="dropdown-menu dropdown-menu-end">
-                <li><a class="dropdown-item" href="#">LogOut</a></li>
+                <li><a class="dropdown-item" href="{{ url('/login/logout') }}">Logout</a></li>
               </ul>
             </li>
           </ul>
@@ -132,22 +132,9 @@
                 @yield('createImages')
                 @yield('updateWebC')
                 </div>
-
-              {{-- <canvas class="chart" width="400" height="200"></canvas> --}}
             </div>
           </div>
         </div>
-        {{-- <div class="col-md-6 mb-3">
-          <div class="card h-100">
-            <div class="card-header">
-              <span class="me-2"><i class="bi bi-bar-chart-fill"></i></span>
-              Area Chart Example
-            </div>
-            <div class="card-body">
-              <canvas class="chart" width="400" height="200"></canvas>
-            </div>
-          </div>
-        </div> --}}
       </div>
       <div class="row">
         <div class="col-md-12 mb-3">
@@ -181,6 +168,9 @@
     <script src="{{ url('./js/jquery.dataTables.min.js') }}"></script>
     <script src="{{ url('./js/dataTables.bootstrap5.min.js') }}"></script>
     {{-- <script src="{{ url('./js/script.js') }}"></script> --}}
+    @else
+      <script>window.location = "/login";</script>  
+    @endif
   </body>
 </html>
 

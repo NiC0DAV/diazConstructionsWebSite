@@ -22,10 +22,5 @@ class IndexController extends Controller
         // dd($content);
         return view('index.index')->with('reviews', $reviews)->with('content', $content)->with('images', $images);
     }
-
-    public function login(){
-
-        return view('login.login');
-
-    }
+    
 }

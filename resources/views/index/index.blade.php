@@ -37,7 +37,8 @@
                         <li><a href="#ProfessionalServices">Services</a></li>
                         <li><a href="#sectionGallery">Gallery</a></li>
                         <li><a href="#reviewsSection">Reviews</a></li>
-                        <li><a href="#" onclick=modalToggle();>Contact Us</a></li>
+                        <li><a href="/login">Login</a></li>
+                        {{-- <li><a href="#" onclick=modalToggle();>Contact Us</a></li> --}}
                     </ul>
                 </div>
             {{-- </div> --}}

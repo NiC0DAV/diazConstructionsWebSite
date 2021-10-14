@@ -20,7 +20,7 @@
     <!-- JS -->
     {{-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> --}}
     <script type="text/javascript" src="{{ url('./js/main.js') }}"></script>
-    <script src="https://kit.fontawesome.com/a4edce8cc0.js" crossorigin="anonymous"></script>
+    {{-- <script src="https://kit.fontawesome.com/a4edce8cc0.js" crossorigin="anonymous"></script> --}}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-kQtW33rZJAHjgefvhyyzcGF3C5TFyBQBA13V1RKPf4uH+bwyzQxZ6CmMZHmNBEfJ" crossorigin="anonymous"></script>
 
 
@@ -41,18 +41,38 @@
                 <div class="container">
                     <div class="form">
                         <h2>Login</h2>
-                        <form action="">
+
+                        @if(isset(Auth::user()->email))
+                            <script>window.location = "/login/successlogin";</script>
+                        @endif
+
+                        @if($message = Session::get('error'))
+                            <div class="alert alert-danger">
+                                <strong>{{ $message }}</strong>
+                            </div>
+                        @endif
+                        @if(count($errors) > 0)
+                            <div class="alert alert-danger">
+                                <ul>
+                                    @foreach($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                        @endif
+                        <form method="post" action=" {{ url('/login/checklogin') }}">
+                            @csrf
                             <div class="inputBox">
-                                <input class="inputField" type="text" name="login" placeholder="Email">
+                                <input class="inputField" type="text" name="email" placeholder="Email">
                             </div>
                             <div class="inputBox">
-                                <input class="inputField" type="password" name="login" placeholder="Password">
+                                <input class="inputField" type="password" name="password" placeholder="Password">
                             </div>
                             <div class="inputBox">
                                 <input class="inputField" type="submit" value="LogIn">
                             </div>
-                            {{-- <p class="forget">Forgot your password?<a href="#">click here</a></p>
-                            <p class="forget">Don't have an account yet?<a href="#">Sign Up</a></p> --}}
+                            <p class="forget">Wanna Go Back?<a href="/">click here</a></p>
+                            {{-- <p class="forget">Don't have an account yet?<a href="#">Sign Up</a></p> --}}
                         </form>
                     </div>
                 </div>
