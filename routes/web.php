@@ -59,15 +59,12 @@ Route::post('/admDashBoard/imagesView/upload', 'App\Http\Controllers\ImagesContr
 
 Route::get('/admDashBoard/imagesView/{id}/edit', 'App\Http\Controllers\ImagesController@editImagesCreateView');
 
-// Login
-
-Route::get('/login', 'App\Http\Controllers\IndexController@login');
-
-
 Route::get('/admDashboard/updateImage/{id}', 'App\Http\Controllers\ImagesController@editImage');
 
 Route::put('/admDashboard/updateImage/{id}/edit', 'App\Http\Controllers\ImagesController@updateImage');
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Login
+
+Route::get('/loginWeb', 'App\Http\Controllers\IndexController@login');
+
+

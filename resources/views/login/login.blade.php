@@ -51,8 +51,8 @@
                             <div class="inputBox">
                                 <input class="inputField" type="submit" value="LogIn">
                             </div>
-                            <p class="forget">Forgot your password?<a href="#">click here</a></p>
-                            <p class="forget">Don't have an account yet?<a href="#">Sign Up</a></p>
+                            {{-- <p class="forget">Forgot your password?<a href="#">click here</a></p>
+                            <p class="forget">Don't have an account yet?<a href="#">Sign Up</a></p> --}}
                         </form>
                     </div>
                 </div>

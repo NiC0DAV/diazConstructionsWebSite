@@ -29,7 +29,7 @@ section .color:nth-child(1){
     top: -350px;
     width: 850px;
     height: 850px;
-    background: #ff359b;
+    background: #77B2F0;
 }
 
 section .color:nth-child(2){
@@ -45,7 +45,7 @@ section .color:nth-child(3){
     right: 100px;
     width: 550px;
     height: 550px;
-    background: #00d2ff;
+    background: #80BB7E;
 }
 
 .box{
@@ -178,7 +178,7 @@ section .color:nth-child(3){
 }
 
 .form .inputBox input::placeholder{
-    color: #fff;
+    color: #111;
 }
 
 .form .inputBox input[type="submit"]{
