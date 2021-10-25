@@ -23,7 +23,7 @@
         <script type="text/javascript" src="{{ url('./js/main.js') }}"></script>
 
     </head>
-    <body>
+    <body id="body">
 
         <header id="header">
             {{-- <div id="headerContainer"> --}}
@@ -74,7 +74,7 @@
             </div>
             
             <div class="mainContainer" id="abUsSec">
-                <div class="abUsBx">
+                {{-- <div class="abUsBx">
                     <div class="abUsContent" >
                         <h1>ABOUT US</h1>
                         <hr>
@@ -104,8 +104,40 @@
                             </div>
                         </div>
                     </div>
+                </div> --}}
+                <div class="pfSVContainer" id="pfSVContainer">
+                    <h1 class="pfSvTitle">Professional Services</h1>
+                    <section class="pfSvSec">
+                        <div class="pfSvContainer left-side">
+                            <div class="left"></div>
+                            <div class="right">
+                                <div class="content" style="color:#fff">
+                                    <h1>Professional Services</h1>
+                                    <p>Quality Work Great Rates</p>
+                                    <p>
+                                        {{ $content->pfSv1 }}
+                                    </p>
+                                        {{-- <a href="#" class="btn">Click Me</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="pfSvSec">
+                        <div class="pfSvContainer right-side">
+                            <div class="left"></div>
+                            <div class="left1">
+                                <div class="content" style="color:#fff">
+                                    <h1>Professional Services</h1>
+                                    <p>Customized To Your Preferences</p>
+                                    <p>
+                                        {{ $content->pfSv2 }}
+                                    </p>
+                                        {{-- <a href="#" class="btn">Click Me</a> --}}
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
-                
 
                 <img src="{{ url('storage/images/wave1.png')}}" alt="" class="wavePath">
             </div>
@@ -120,40 +152,39 @@
                 </div>
             </div> --}}
             <div class="mainContainer2" id="ProfessionalServices">
-            <img src="{{ url('storage/images/wave2.png')}}" alt="" class="wavePath2">
-            <div class="pfSVContainer" id="pfSVContainer">
-                <h1 class="pfSvTitle">Professional Services</h1>
-                <section class="pfSvSec">
-                    <div class="pfSvContainer left-side">
-                        <div class="left"></div>
-                        <div class="right">
-                            <div class="content" style="color:#fff">
-                                <h1>Professional Services</h1>
-                                <p>Quality Work Great Rates</p>
-                                <p>
-                                    {{ $content->pfSv1 }}
-                                </p>
-                                    {{-- <a href="#" class="btn">Click Me</a> --}}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section class="pfSvSec">
-                    <div class="pfSvContainer right-side">
-                        <div class="left"></div>
-                        <div class="left1">
-                            <div class="content" style="color:#fff">
-                                <h1>Professional Services</h1>
-                                <p>Customized To Your Preferences</p>
-                                <p>
-                                    {{ $content->pfSv2 }}
-                                </p>
-                                    {{-- <a href="#" class="btn">Click Me</a> --}}
-                            </div>
-                        </div>
-                    </div>
-                </section>
+            <img src="{{ url('storage/images/wave2.png')}}" alt="" class="wavePath2">`
+            <div class="abUsBx">
+                <div class="abUsContent" >
+                    <h1>ABOUT US</h1>
+                    <hr>
+                    <p>{{ $content->aboutUsText }}</p>
+                </div>
             </div>
+            <div class="abUsCardContainer">
+                <div class="container">
+                    <div class="abUsCard">
+                        <div class="circle">
+                            <h2>Mission</h2>
+                        </div>
+                        <div class="cardContent">
+                            <p>
+                                {{ $content->mission }}
+                            </p>
+                        </div>
+                    </div>
+                    <div class="abUsCard">
+                        <div class="circle">
+                            <h2>Vision</h2>
+                        </div>
+                        <div class="cardContent">
+                            <p>
+                                {{ $content->vission }}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
 
             <div class="gallery" id="sectionGallery">
                 <h1 class="galleryTitle">Images Gallery</h1>
@@ -196,7 +227,7 @@
                         @endphp
                     @endforeach
                     @if ($count == 0)
-                        <h3>Ouch! sorry, there aren't reviews available to show</h3>
+                        <h3>Ouch! sorry, there aren't available reviews to show</h3>
                     @endif
                     </div>
                 </div>
@@ -257,6 +288,7 @@
                 </div>
             </div>
         
+        {{-- <script type="text/javascript"></script> --}}
         <script type="text/javascript" src="{{ url('./js/lightbox.js') }}"></script>
         <script type="text/javascript" src="{{ url('./js/vanilla-tilt.js') }}"></script>
         <script type="text/javascript">

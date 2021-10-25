@@ -1,0 +1,80 @@
+{
+    "short_name": "DiazConstructions",
+    "name": "Diaz Constructions",
+    "lang": "en",
+    "description": "Diaz Constructions serves as a leading Construction Company in the Tri-State area. We’re a team professionals who tackle everything from complex large projects to smaller scale jobs.",
+    "start_url": "https://diazconstructions.com.co/",
+    "background_color": "#77b2f0",
+    "theme_color": "#77b2f0",
+    "dir": "ltr",
+    "display": "standalone",
+    "orientation": "any",
+    "icons": [
+    {
+      "src": "storage/android-icon-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "storage/apple-icon-180x180.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "storage/apple-icon-152x152.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "storage/apple-icon-144x144.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "storage/apple-icon-120x120.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "storage/apple-icon-114x114.png",
+      "type": "image/png",
+      "sizes": "114x114"
+    },
+    {
+      "src": "storage/favicon-96x96.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "storage/apple-icon-76x76.png",
+      "type": "image/png",
+      "sizes": "76x76"
+    },
+    {
+      "src": "storage/apple-icon-72x72.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "storage/apple-icon-60x60.png",
+      "type": "image/png",
+      "sizes": "60x60"
+    },
+    {
+      "src": "storage/apple-icon-57x57.png",
+      "type": "image/png",
+      "sizes": "57x57"
+    },
+    {
+      "src": "storage/favicon-32x32.png",
+      "type": "image/png",
+      "sizes": "32x32"
+    },
+    {
+      "src": "storage/favicon-16x16.png",
+      "type": "image/png",
+      "sizes": "16x16"
+    }
+  ],
+  "prefer_related_applications": "false"
+}

@@ -17,6 +17,8 @@ body {
     /* overflow: hidden; */
 }
 
+
+
 /* Navigation Menu */
 
 header{
@@ -282,7 +284,7 @@ header{
 
 .mainContainer{
     background: linear-gradient(45deg, #3082b7,#bb02ff);
-    background-attachment: fixed;
+   /* background-attachment: fixed;*/
 }
 
 .mainContainer2{
@@ -295,7 +297,7 @@ header{
 }
 
 .abUsContent{
-    height: 16vh;
+    /* height: 16vh; */
     width: 55em;     
     text-align: center; 
     color: #111; 
@@ -327,7 +329,7 @@ header{
 .container{
     position: relative;
     width: 807px;
-    padding: 20px;
+    /*padding: 20px;*/
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
@@ -565,6 +567,7 @@ header{
 
 .galleryTitle{
     /* font-weight: 400; */
+    text-align: center;
     color: #fff;
     font-size: 4em;
     display: flex;
@@ -581,7 +584,7 @@ header{
 
 .sectionGallery{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     width: 95;
     margin: auto;
     grid-gap: 10px;
@@ -771,7 +774,7 @@ header{
     justify-content: flex-end;
     align-items: center;
     flex-direction: column;
-    background-color: #ede7f6;
+    background-color: #fff;
 }
 
 footer{
@@ -982,9 +985,9 @@ footer p{
 /* Media Queries */
 
 @media (max-width: 1421px){
-    .container{
+    /* .container{
         padding: 28px;
-    }
+    } */
     .left-side{
         position: relative;
         right: 122px;
@@ -998,9 +1001,9 @@ footer p{
 }
 
 @media (max-width: 1253px){
-    .container{
+    /* .container{
         padding: 28px;
-    }
+    } */
     .left-side{
         position: relative;
         right: 58px;
@@ -1058,6 +1061,11 @@ footer p{
     .logo{
         margin-top: -18px;
     }
+    
+    .active{
+        overflow: hidden;
+    }
+
 
     #navbar{
         position: fixed;
@@ -1072,6 +1080,7 @@ footer p{
         /*  */
     }
 
+    
     #navbar.active{
         height: calc(100vh - 60px);
         /* height: 657.51px; */
@@ -1170,14 +1179,43 @@ footer p{
 
 
 @media (max-width: 873px){
-    .container{
+    /* .container{
         padding: 28px;
+    } */
+
+    .container:hover .abUsCard{
+        filter: blur(0px);
+        transform: scale(1);
+        opacity: 1;
+    }
+    
+    .container .abUsCard:hover{
+        filter: blur(0px);
+        transform: scale(1);
+        opacity: 1;
     }
 }
 
+
 @media (max-width: 768px){
-    .container{
+    /* .container{
         padding: 55px;
+    } */
+        #navbar.active{
+        height: calc(100vh - 81px);
+        bottom: 0;
+        width: 100%;
+        color: #111;
+    }
+    
+    #toggle{
+        top: 12px;
+    }
+    
+    .logo{
+        margin-left: -30px;
+        top: 10px;
+        margin-top: -8px;
     }
 }
 
@@ -1203,4 +1241,10 @@ footer p{
         font-size: 19px;
         margin-left: -30px;
     }
+    
+    .pfSvTitle{
+        font-size: 3.5em;
+        text-align: center;
+    }
+    
 }
