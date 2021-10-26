@@ -2,7 +2,7 @@
 
 
 
-<a href="https://diazconstructions.com.co/">Go to the site</a>
+<a href="https://diazconstructions.com.co/" target="_blank">Go to the site</a>
 
 <h3 align="left">About the site</h3>
 
