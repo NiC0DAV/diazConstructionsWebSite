@@ -15,6 +15,7 @@
         {{-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous"> --}}
         <link rel="stylesheet" href="{{ url('./css/style.css') }}">
         <link rel="stylesheet" type="text/css" href="{{ url('./css/lightbox.css') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
         <!-- JS -->
         {{-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> --}}
@@ -74,7 +75,7 @@
             </div>
             
             <div class="mainContainer" id="abUsSec">
-                {{-- <div class="abUsBx">
+                <div class="abUsBx">
                     <div class="abUsContent" >
                         <h1>ABOUT US</h1>
                         <hr>
@@ -104,40 +105,8 @@
                             </div>
                         </div>
                     </div>
-                </div> --}}
-                <div class="pfSVContainer" id="pfSVContainer">
-                    <h1 class="pfSvTitle">Professional Services</h1>
-                    <section class="pfSvSec">
-                        <div class="pfSvContainer left-side">
-                            <div class="left"></div>
-                            <div class="right">
-                                <div class="content" style="color:#fff">
-                                    <h1>Professional Services</h1>
-                                    <p>Quality Work Great Rates</p>
-                                    <p>
-                                        {{ $content->pfSv1 }}
-                                    </p>
-                                        {{-- <a href="#" class="btn">Click Me</a> --}}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                    <section class="pfSvSec">
-                        <div class="pfSvContainer right-side">
-                            <div class="left"></div>
-                            <div class="left1">
-                                <div class="content" style="color:#fff">
-                                    <h1>Professional Services</h1>
-                                    <p>Customized To Your Preferences</p>
-                                    <p>
-                                        {{ $content->pfSv2 }}
-                                    </p>
-                                        {{-- <a href="#" class="btn">Click Me</a> --}}
-                                </div>
-                            </div>
-                        </div>
-                    </section>
                 </div>
+                
 
                 <img src="{{ url('storage/images/wave1.png')}}" alt="" class="wavePath">
             </div>
@@ -152,39 +121,40 @@
                 </div>
             </div> --}}
             <div class="mainContainer2" id="ProfessionalServices">
-            <img src="{{ url('storage/images/wave2.png')}}" alt="" class="wavePath2">`
-            <div class="abUsBx">
-                <div class="abUsContent" >
-                    <h1>ABOUT US</h1>
-                    <hr>
-                    <p>{{ $content->aboutUsText }}</p>
-                </div>
-            </div>
-            <div class="abUsCardContainer">
-                <div class="container">
-                    <div class="abUsCard">
-                        <div class="circle">
-                            <h2>Mission</h2>
-                        </div>
-                        <div class="cardContent">
-                            <p>
-                                {{ $content->mission }}
-                            </p>
+            <img src="{{ url('storage/images/wave2.png')}}" alt="" class="wavePath2">
+            <div class="pfSVContainer" id="pfSVContainer">
+                <h1 class="pfSvTitle">Professional Services</h1>
+                <section class="pfSvSec">
+                    <div class="pfSvContainer left-side">
+                        <div class="left"></div>
+                        <div class="right">
+                            <div class="content" style="color:#fff">
+                                <h1>Professional Services</h1>
+                                <p>Quality Work Great Rates</p>
+                                <p>
+                                    {{ $content->pfSv1 }}
+                                </p>
+                                    {{-- <a href="#" class="btn">Click Me</a> --}}
+                            </div>
                         </div>
                     </div>
-                    <div class="abUsCard">
-                        <div class="circle">
-                            <h2>Vision</h2>
-                        </div>
-                        <div class="cardContent">
-                            <p>
-                                {{ $content->vission }}
-                            </p>
+                </section>
+                <section class="pfSvSec">
+                    <div class="pfSvContainer right-side">
+                        <div class="left"></div>
+                        <div class="left1">
+                            <div class="content" style="color:#fff">
+                                <h1>Professional Services</h1>
+                                <p>Customized To Your Preferences</p>
+                                <p>
+                                    {{ $content->pfSv2 }}
+                                </p>
+                                    {{-- <a href="#" class="btn">Click Me</a> --}}
+                            </div>
                         </div>
                     </div>
-                </div>
+                </section>
             </div>
-
 
             <div class="gallery" id="sectionGallery">
                 <h1 class="galleryTitle">Images Gallery</h1>
@@ -227,7 +197,7 @@
                         @endphp
                     @endforeach
                     @if ($count == 0)
-                        <h3>Ouch! sorry, there aren't available reviews to show</h3>
+                        <h3>Ouch! sorry, there aren't reviews available to show</h3>
                     @endif
                     </div>
                 </div>
@@ -268,15 +238,15 @@
                             <h2>Contact Information</h2>
                             <ul class="info">
                                 <li>
-                                    <span><i class="fas fa-map-marker-alt"></i></span>
+                                    <span><i class="bi bi-geo-alt-fill"></i></span>
                                     <span>Address: {{ $content->address }}</span>
                                 </li>
                                 <li>
-                                    <span><i class="fas fa-phone-alt"></i></span>
+                                    <span><i class="bi bi-telephone-fill"></i>
                                     <span>Tel: {{ $content->telText }}</span>
                                 </li>
                                 <li>
-                                    <span><i class="fas fa-envelope"></i></span>
+                                    <span><i class="bi bi-envelope-fill"></i></span>
                                     <span>Email: {{ $content->emailText }}</span>
                                 </li>
                             </ul>
@@ -288,9 +258,15 @@
                 </div>
             </div>
         
-        {{-- <script type="text/javascript"></script> --}}
+        <script type="text/javascript">
+            if (window.screen.width > 780) {
+                document.write( 
+                    '<script type="text/javascript" src="{{ url("./js/vanilla-tilt.js") }}"><\/script>'
+                )
+            }
+        </script>
         <script type="text/javascript" src="{{ url('./js/lightbox.js') }}"></script>
-        <script type="text/javascript" src="{{ url('./js/vanilla-tilt.js') }}"></script>
+        <script type="text/javascript" src="{{ url('./js/lightbox.js') }}"></script>' +
         <script type="text/javascript">
             VanillaTilt.init(document.querySelectorAll(".reviewCard"), {
                 max: 25,
