@@ -17,6 +17,9 @@
         <link rel="stylesheet" type="text/css" href="{{ url('./css/lightbox.css') }}">
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
+        <!-- Font Awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+       
         <!-- JS -->
         {{-- <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script> --}}
         <script src="https://kit.fontawesome.com/a4edce8cc0.js" crossorigin="anonymous"></script>
@@ -27,9 +30,7 @@
     <body id="body">
 
         <header id="header">
-            {{-- <div id="headerContainer"> --}}
                 <a href="#" class="logo">Diaz Constructions</a>
-                {{-- <img src="{{ url('storage/images/logo.png')}}" alt=""> --}}
                 <div id="toggle" onclick=navToggle();></div>
                 <div id="navbar">
                     <ul>
@@ -39,10 +40,8 @@
                         <li><a href="#sectionGallery">Gallery</a></li>
                         <li><a href="#reviewsSection">Reviews</a></li>
                         <li><a href="/login">Login</a></li>
-                        {{-- <li><a href="#" onclick=modalToggle();>Contact Us</a></li> --}}
                     </ul>
                 </div>
-            {{-- </div> --}}
         </header>
 
         <div class="responsive-menu">
@@ -53,27 +52,38 @@
             <section id="reviews">Reviews</section>
             <section id="conUs">Contact Us</section>
         </div>
-        
-            <div class="slider" id="slider">
-
+                    
+        <section class="sliderSection">
+            <div class="slider">
                 @foreach($images as $image)
                     @if($image->sliderStatus == 1)
-                    <input type="radio" name="slider" id="radio" checked="true" value="">
-                    <div class="imgBx">
-                        <img class="sliderImage" src="{{ url('uploads/'.$image->pathImage) }}" alt="">
-                        <div class="content">
-                            <h2>{{ $image->imageTitle }}</h2>
-                            <p>
-                                {{ $image->imageDescription }}
-                            </p>
-                            <a href="#sectionGallery">View More Images</a>
+                        <div class="slide @if ($loop->index == 0) active @endif">
+                            <img class="sliderImage" src="{{ url('uploads/'.$image->pathImage) }}" alt="">
+                            <div class="content">
+                                <h2>{{ $image->imageTitle }}</h2>
+                                <p>
+                                    {{ $image->imageDescription }}
+                                </p>
+                                <a href="#sectionGallery">View More Images</a>
+                            </div>
                         </div>
-                    </div>
                     @endif
                 @endforeach
+                <div class="navigation">
+                <i class="fas fa-chevron-left prev-btn"></i>
+                <i class="fas fa-chevron-right next-btn"></i>
+                </div>
 
+                <div class="navigation-visibility">
+                    @foreach($images as $image)
+                        @if($image->sliderStatus == 1)
+                            <div class="slide-icon @if ($loop->index == 0) active @endif"></div>
+                        @endif
+                    @endforeach
+                </div>
             </div>
-            
+        </section>
+
             <div class="mainContainer" id="abUsSec">
                 <div class="abUsBx">
                     <div class="abUsContent" >

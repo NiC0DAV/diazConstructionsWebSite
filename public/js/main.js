@@ -59,41 +59,84 @@ $(document).ready(function () {
     $(table).DataTable();
   });
   // window.location.reload(true);
+
+  const slider = document.querySelector(".slider");
+  const nextBtn = document.querySelector(".next-btn");
+  const prevBtn = document.querySelector(".prev-btn");
+  const slides = document.querySelectorAll(".slide");
+  const slideIcons = document.querySelectorAll(".slide-icon");
+  const numberOfSlides = slides.length;
+  var slideNumber = 0;
+
+  //image slider next button
+  nextBtn.addEventListener("click", () => {
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+    slideIcons.forEach((slideIcon) => {
+      slideIcon.classList.remove("active");
+    });
+
+    slideNumber++;
+
+    if(slideNumber > (numberOfSlides - 1)){
+      slideNumber = 0;
+    }
+
+    slides[slideNumber].classList.add("active");
+    slideIcons[slideNumber].classList.add("active");
+  });
+
+  //image slider previous button
+  prevBtn.addEventListener("click", () => {
+    slides.forEach((slide) => {
+      slide.classList.remove("active");
+    });
+    slideIcons.forEach((slideIcon) => {
+      slideIcon.classList.remove("active");
+    });
+
+    slideNumber--;
+
+    if(slideNumber < 0){
+      slideNumber = numberOfSlides - 1;
+    }
+
+    slides[slideNumber].classList.add("active");
+    slideIcons[slideNumber].classList.add("active");
+  });
+
+  //image slider autoplay
+  var playSlider;
+
+  var repeater = () => {
+    playSlider = setInterval(function(){
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slideIcons.forEach((slideIcon) => {
+        slideIcon.classList.remove("active");
+      });
+
+      slideNumber++;
+
+      if(slideNumber > (numberOfSlides - 1)){
+        slideNumber = 0;
+      }
+
+      slides[slideNumber].classList.add("active");
+      slideIcons[slideNumber].classList.add("active");
+    }, 5000);
+  }
+  repeater();
+
+  //stop the image slider autoplay on mouseover
+  slider.addEventListener("mouseover", () => {
+    clearInterval(playSlider);
+  });
+
+  //start the image slider autoplay again on mouseout
+  slider.addEventListener("mouseout", () => {
+    repeater();
+  });
 });
-
-// $(document).ready(function() {
-
-//     let seconds = 5;
-//     let repeat = 0;
-//     // let holdOn = 0;
-//     $('#checkbox1').prop('checked', true);
-//     let countdown = setInterval(function(){
-//         seconds--;
-//         console.log('Continuo')
-//         var x = document.getElementsByTagName('input')[0].id;
-//         console.log('El id es:'+x);
-//         if(repeat == 0){
-//             $('#4').prop('checked', false);
-//             $('#5').prop('checked', true);
-//             repeat = 1;
-//         }else if(repeat == 1){
-//             $('#checkbox2').prop('checked', false);
-//             $('#checkbox3').prop('checked', true);
-//             repeat = 2;
-//         }else if(repeat == 2){
-//             $('#checkbox3').prop('checked', false);
-//             $('#checkbox4').prop('checked', true);
-//             repeat = 3;
-//         }else if (repeat == 3){
-//             $('#checkbox4').prop('checked', false);
-//             $('#checkbox5').prop('checked', true);
-//             repeat = 4;
-//         }else if (repeat == 4){
-//              $('#checkbox1').prop('checked', true);
-//              repeat = 0;
-//          }
-//         console.log(repeat); 
-//     },7000); 
-
-// });
-
